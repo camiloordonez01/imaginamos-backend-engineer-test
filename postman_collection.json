@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "c76e213a-ac5f-455f-97cd-5f51ca42f3c2",
+		"name": "imaginamos_prueba",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener tickets de tecnico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/tecnicos/3/tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tecnicos",
+						"3",
+						"tickets"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
