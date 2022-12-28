@@ -25,8 +25,9 @@ class Server {
         this.app.use(express.json())
         this.app.use(express.urlencoded({ extended: false }))
 
-        this.app.use((data: unknown, req: Request, res: Response) =>
-            handleResponse(data, res)
+        this.app.use(
+            (data: unknown, req: Request, res: Response, next: NextFunction) =>
+                handleResponse(data, res, next)
         )
         this.app.use((err: Error, req: Request, res: Response) =>
             handleError(err, res)

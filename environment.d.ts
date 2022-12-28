@@ -7,6 +7,7 @@ declare global {
             PORT_DB?: string
             USER_DB: string
             PASSWORD_DB: string
+            DATABASE_DB: string
             SCHEMA_DB: string | '3306'
             TIMEZONE: string
         }

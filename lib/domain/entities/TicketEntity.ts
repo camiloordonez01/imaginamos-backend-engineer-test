@@ -15,10 +15,10 @@ export class TicketEntity extends BaseEntity {
     @Column()
     token: string
 
-    @ManyToOne(() => TechnicianEntity, (technician) => technician.tickets)
-    technicians_id: TechnicianEntity
+    @Column()
+    technicians_id: number
 
-    constructor(token: string, technicians_id: TechnicianEntity) {
+    constructor(token: string, technicians_id: number) {
         super()
         this.token = token
         this.technicians_id = technicians_id

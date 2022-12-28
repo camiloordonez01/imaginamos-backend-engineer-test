@@ -9,7 +9,8 @@
         "build": "npx tsc -p .",
         "format": "prettier --write \"**/*.{js,json}\"",
         "lint": "eslint --fix --ext .js .",
-        "clean": "rm -rf dist"
+        "clean": "rm -rf dist",
+        "migrate": "./node_modules/.bin/db-migrate up"
     },
     "devDependencies": {
         "@types/aws-serverless-express": "^3.3.5",
@@ -38,10 +39,11 @@
         "aws-serverless-express": "^3.4.0",
         "class-validator": "^0.13.2",
         "cors": "^2.8.5",
+        "db-migrate": "^0.11.13",
         "dotenv": "^16.0.1",
         "express": "^4.17.1",
         "joi": "^17.6.0",
-        "mysql2": "^2.3.3",
+        "pg": "^8.8.0",
         "reflect-metadata": "^0.1.13",
         "typeorm": "^0.3.6",
         "uuid": "^9.0.0",

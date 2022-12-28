@@ -9,12 +9,8 @@ export class TechnicianEntity {
     @Column()
     nombre: string
 
-    @OneToMany(() => TicketEntity, (ticket) => ticket.technicians_id)
-    tickets: TicketEntity[]
-
-    constructor(id: number, nombre: string, tickets: TicketEntity[]) {
+    constructor(id: number, nombre: string) {
         this.id = id
         this.nombre = nombre
-        this.tickets = tickets
     }
 }

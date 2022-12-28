@@ -31,4 +31,22 @@ export class TechnicianStorage extends Storage {
             return Promise.reject(error)
         }
     }
+
+    async getById(id: number): Promise<TechnicianEntity | null> {
+        try {
+            const technician = await this.repository.findOneBy({ id })
+
+            return technician
+        } catch (error: Error | unknown) {
+            if (error instanceof Error) {
+                logger.crit({
+                    level: 'crit',
+                    file: 'database/index.ts',
+                    message: `${error.message}`,
+                    stack: error.stack,
+                })
+            }
+            return Promise.reject(error)
+        }
+    }
 }

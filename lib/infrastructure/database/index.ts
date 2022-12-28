@@ -4,7 +4,8 @@ import { logger } from '../handler'
 import { TechnicianEntity } from '../../domain/entities/TechnicianEntity'
 import { TicketEntity } from '../../domain/entities/TicketEntity'
 
-const { HOST_DB, PORT_DB, USER_DB, PASSWORD_DB, SCHEMA_DB } = process.env
+const { HOST_DB, PORT_DB, USER_DB, PASSWORD_DB, DATABASE_DB, SCHEMA_DB } =
+    process.env
 
 class DataBase {
     static instance: DataBase | null = null
@@ -12,12 +13,13 @@ class DataBase {
 
     private constructor() {
         this.appDataSource = new DataSource({
-            type: 'mysql',
+            type: 'postgres',
             host: HOST_DB,
             port: Number(PORT_DB),
             username: USER_DB,
             password: PASSWORD_DB,
-            database: SCHEMA_DB,
+            database: DATABASE_DB,
+            schema: SCHEMA_DB,
             synchronize: false,
             logging: false,
             entities: [TechnicianEntity, TicketEntity],

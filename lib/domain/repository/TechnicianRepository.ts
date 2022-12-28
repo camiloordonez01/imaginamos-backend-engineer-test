@@ -12,4 +12,8 @@ export class TechnicianRepository {
     async getAll(): Promise<TechnicianEntity[]> {
         return this.storage.getAll()
     }
+
+    async getById(id: number): Promise<TechnicianEntity | null> {
+        return this.storage.getById(id)
+    }
 }

@@ -1,0 +1,11 @@
+{
+    "dev": {
+      "driver": "pg",
+      "host": {"ENV": "HOST_DB"},
+      "port": "5432",
+      "user": {"ENV": "USER_DB"},
+      "password": {"ENV": "PASSWORD_DB"},
+      "database": {"ENV": "DATABASE_DB"},
+      "schema": {"ENV": "SCHEMA_DB"}
+    }
+}
